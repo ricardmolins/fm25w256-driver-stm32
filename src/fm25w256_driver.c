@@ -327,8 +327,8 @@ bool FM25W256_WriteMemoryData(uint16_t addr, uint8_t * data, uint16_t data_lengt
         fram_function = FRAM_FUNCTION_WRITE_REGISTERS;
         req_address = addr;
         /* Sanitizing inputs */
-        if (req_length > (TX_BUFFER_SIZE - OPCODE_CMD_WRITE_HEADER_SIZE)) {
-            req_length = TX_BUFFER_SIZE - OPCODE_CMD_WRITE_HEADER_SIZE;
+        if (req_length > (TX_BUFFER_SIZE)) {
+            req_length = TX_BUFFER_SIZE;
         } else {
             req_length = data_length;
         }
